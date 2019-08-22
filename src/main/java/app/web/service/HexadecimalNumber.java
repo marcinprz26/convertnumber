@@ -30,8 +30,6 @@ public class HexadecimalNumber implements Converter {
             result.append(mod.compareTo(new BigInteger("9")) == 1 ?
                     getDec(mod) : mod.toString());
             counter = counter.divide(base);
-            System.out.println("Hex result: " + result.toString());
-            System.out.println("Hex counter: " + counter);
         } while(counter.compareTo(BigInteger.ZERO) != 0);
 
         return result.reverse().toString();

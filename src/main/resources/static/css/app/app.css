@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+}
+.main-container {
+    height: 100%;
+}
+.header-container {
+    background-color: #6f42c1;
+    color: #fff;
+}
+.header-container .title-head {
+    margin: 30px;
+}
+.header-container h2 {
+    text-align: center;
+}
+.header-container .title-link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+.header-container .title-link:hover,
+.header-container .title-link:active,
+.header-container .title-link:focus {
+    color: #25f9eb;
+}
+.form-container {
+    background-color: #25f9eb;
+    height: 100%;
+}
+#convertion-form {
+    margin-top: 30px;
+}
+.convert-label {
+    font-weight: bold;
+    color: #495057;
+}
+.system-group .btn {
+    /*background-color: #9595a8;*/
+}
+#system-error, #digit-error {
+    display: none;
+    color: red;
+    font-weight: 400;
+}
+.system-row #system-group .btn {
+    width: 50%;
+}
+.result-row h3 {
+    display: inline-block;
+}
+.sign-decor {
+    text-decoration: overline;
+}
+.result-label, .result-value {
+    font-size: 1.5rem;
+    color: #495057;
+    font-weight: bold;
+}
