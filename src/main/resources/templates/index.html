@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Convert Number</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/app/app.css}" />
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/lib/bootstrap.min.css}" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/app/app.js"></script>
+</head>
+<body>
+    <div class="container-fluid main-container">
+        <div class="container header-container">
+            <div class="row justify-content-center">
+                <div class="col-lg-auto title-head">
+                    <h2><a class="title-link" href="/">Number Converter</a></h2>
+                    <p>Convert decimal number to hexadecimal or roman number</p>
+                </div>
+            </div>
+        </div>
+        <div class="container form-container">
+            <div class="row justify-content-md-center">
+                <form class="col-md-8" id="convertion-form" action="convert" method="post">
+                    <fieldset>
+                        <div class="form-group row justify-content-center decimal-row">
+                            <label class="col-sm-12 col-md-8 col-form-label col-form-label-lg convert-label" for="decimal">Decimal number: </label>
+                            <div class="col-sm-12 col-md-8">
+                                <input class="col-sm-12 form-control form-control-lg"  id="decimal" type="number" th:value="${decimal}" name="decimal" required/>
+                            </div>
+                            <div class="col-sm-8">
+                                <span id="digit-error" value=""></span>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center system-row">
+                            <div class="btn-group col-sm-8" id="system-group" role="group" aria-label="numeral-system">
+                                <button type="button" class="btn btn-secondary" name="system-group" id="hex-btn" value="HEX">Hexadecimal</button>
+                                <button type="button" class="btn btn-secondary" name="system-group" id="rom-btn" value="ROM">Roman</button>
+                            </div>
+                            <div class="col-sm-8">
+                                <span id="system-error">*Select one of number systems</span>
+                            </div>
+                            <input id="system" type="hidden" pattern="[A-Za-z]{3}" th:value="${system}" name="system">
+                        </div>
+                        <div class="form-group row justify-content-center submit">
+                            <div class="col-sm-12 col-md-8">
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Convert</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="row justify-content-center result-row">
+                <div class="col-md-8">
+                    <h3 class="col-sm-12 col-md-2 result-label">Result: </h3>
+                    <h3 class="col-sm-12 col-md-8 result-value" id="result" th:text="${result}" name="result"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
